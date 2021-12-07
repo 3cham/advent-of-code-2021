@@ -21,9 +21,9 @@ func parse_input(input []string) ([]string, [][][]string) {
 			break
 		}
 		var m [][]string
-		for row := 0; row < 5; row ++ {
+		for row := 0; row < 5; row++ {
 
-			m = append(m, strings.Split(strings.Trim(strings.Replace(input[blockStart + row], "  ", " ", -1), " "), " "))
+			m = append(m, strings.Split(strings.Trim(strings.Replace(input[blockStart+row], "  ", " ", -1), " "), " "))
 		}
 		matrices = append(matrices, m)
 	}
@@ -36,7 +36,7 @@ func build_lookup_dict(m [][][]string) map[string][]string {
 	for mId, matric := range m {
 		for rowId, row := range matric {
 			for colId, cell := range row {
-				if _, inserted := l[cell]; ! inserted {
+				if _, inserted := l[cell]; !inserted {
 					l[cell] = []string{}
 				}
 				l[cell] = append(l[cell], fmt.Sprintf("%v_%v_%v", mId, rowId, colId))
@@ -70,7 +70,7 @@ func part1(test bool) int {
 
 	var countRow, countCol = make(map[string]int), make(map[string]int)
 	for mId, _ := range matrices {
-		for id := 0; id < 5; id ++ {
+		for id := 0; id < 5; id++ {
 			key := fmt.Sprintf("%v_%v", mId, id)
 			countRow[key] = 0
 			countCol[key] = 0
@@ -102,7 +102,6 @@ func part1(test bool) int {
 			}
 		}
 	}
-
 
 	return 0
 }

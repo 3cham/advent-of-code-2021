@@ -7,15 +7,15 @@ func Part2(test bool) int {
 }
 
 func consum(input []int, start, length int) int {
-    var sum int
-	if start + length > len(input) {
+	var sum int
+	if start+length > len(input) {
 		return 0
 	}
 	for i := start; i < start+length; i++ {
-        sum += input[i]
-    }
+		sum += input[i]
+	}
 
-    return sum
+	return sum
 }
 
 func day2(test bool) int {
@@ -23,8 +23,8 @@ func day2(test bool) int {
 	count := 0
 	length := 3
 
-	for i := 1; i < len(input); i ++ {
-		if consum(input, i, length) > consum(input, i - 1, length) {
+	for i := 1; i < len(input); i++ {
+		if consum(input, i, length) > consum(input, i-1, length) {
 			count += 1
 		}
 	}

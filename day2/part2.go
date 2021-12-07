@@ -22,8 +22,10 @@ func part2(test bool) int {
 		case "forward":
 			x += value
 			y += aim * value
-		case "up": aim -= value
-		case "down": aim += value
+		case "up":
+			aim -= value
+		case "down":
+			aim += value
 		}
 	}
 	return x * y

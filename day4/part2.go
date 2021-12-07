@@ -20,7 +20,7 @@ func part2(test bool) int {
 
 	var countRow, countCol = make(map[string]int), make(map[string]int)
 	for mId, _ := range matrices {
-		for id := 0; id < 5; id ++ {
+		for id := 0; id < 5; id++ {
 			key := fmt.Sprintf("%v_%v", mId, id)
 			countRow[key] = 0
 			countCol[key] = 0
@@ -58,7 +58,6 @@ func part2(test bool) int {
 			}
 		}
 	}
-
 
 	return 0
 }

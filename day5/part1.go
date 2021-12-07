@@ -12,9 +12,9 @@ func Part1(test bool) int {
 
 func parse_point(s string) (int, int) {
 	parts := strings.Split(s, ",")
-    x, _ := strconv.Atoi(parts[0])
-    y, _ := strconv.Atoi(parts[1])
-    return x, y
+	x, _ := strconv.Atoi(parts[0])
+	y, _ := strconv.Atoi(parts[1])
+	return x, y
 }
 
 func parse_row(input string) []int {
@@ -36,7 +36,7 @@ func part1(test bool) int {
 		line := parse_row(row)
 
 		// consider only horizontal or vertical lines
-		if line[0] == line[2]  {
+		if line[0] == line[2] {
 			start, end := line[1], line[3]
 
 			if line[1] > line[3] {
@@ -58,22 +58,22 @@ func part1(test bool) int {
 		} else if line[1] == line[3] {
 			start, end := line[0], line[2]
 
-            if line[0] > line[2] {
-                start = line[2]
-                end = line[0]
-            }
+			if line[0] > line[2] {
+				start = line[2]
+				end = line[0]
+			}
 
-            for i := start; i <= end; i++ {
-                if _, existed := count[i]; !existed {
-                    count[i] = make(map[int]int)
-                }
+			for i := start; i <= end; i++ {
+				if _, existed := count[i]; !existed {
+					count[i] = make(map[int]int)
+				}
 
-                if _, existed := count[i][line[1]]; !existed {
-                    count[i][line[1]] = 0
-                }
+				if _, existed := count[i][line[1]]; !existed {
+					count[i][line[1]] = 0
+				}
 
-                count[i][line[1]] += 1
-            }
+				count[i][line[1]] += 1
+			}
 		}
 	}
 
@@ -82,8 +82,8 @@ func part1(test bool) int {
 	for x := range count {
 		for y := range count[x] {
 			if count[x][y] > 1 {
-                total += 1
-            }
+				total += 1
+			}
 		}
 	}
 

@@ -19,9 +19,12 @@ func part1(test bool) int {
 		value := utils.ToInt(part[1])
 
 		switch command {
-		case "forward": x += value
-		case "up": y -= value
-		case "down": y += value
+		case "forward":
+			x += value
+		case "up":
+			y -= value
+		case "down":
+			y += value
 		}
 	}
 	return x * y

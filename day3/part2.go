@@ -21,7 +21,7 @@ func filters(input []string, pos int, isOxyGen bool) string {
 	}
 
 	var foundBit uint8 = '0'
-	if count >= len(input) / 2 + len(input) % 2{
+	if count >= len(input)/2+len(input)%2 {
 		foundBit = '1'
 	} else {
 		foundBit = '0'
@@ -36,15 +36,15 @@ func filters(input []string, pos int, isOxyGen bool) string {
 		if line[pos] == foundBit {
 			newInput = append(newInput, line)
 		}
-    }
-	return filters(newInput, pos + 1, isOxyGen)
+	}
+	return filters(newInput, pos+1, isOxyGen)
 }
 
 func getVal(s string) int {
 	value := 0
 	for _, c := range s {
-        value = value * 2 + int(c - '0')
-    }
+		value = value*2 + int(c-'0')
+	}
 	return value
 }
 

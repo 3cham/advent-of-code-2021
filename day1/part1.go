@@ -10,8 +10,8 @@ func day1(test bool) int {
 	input := utils.ToIntArr(utils.GetInput("1", test))
 	count := 0
 
-	for i := 1; i < len(input); i ++ {
-		if input[i] > input[i - 1] {
+	for i := 1; i < len(input); i++ {
+		if input[i] > input[i-1] {
 			count += 1
 		}
 	}

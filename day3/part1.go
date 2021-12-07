@@ -18,8 +18,8 @@ func part1(test bool) float64 {
 	for _, line := range input {
 		for pos, char := range line {
 			if char == '1' {
-                countOne[pos]++
-            }
+				countOne[pos]++
+			}
 		}
 	}
 
@@ -27,8 +27,8 @@ func part1(test bool) float64 {
 	for _, v := range countOne {
 		value *= 2
 		if v >= len(input)/2 {
-            value += 1
-        }
+			value += 1
+		}
 	}
 	return (math.Pow(2, float64(N)) - value - 1) * value
 }
